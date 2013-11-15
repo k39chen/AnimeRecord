@@ -24,3 +24,7 @@ simply download the ZIP through git and open the `index.html` in any browser (pr
 License
 -------------
 Copyright (c) 2013 Kevin Chen.
+
+_________________________
+
+**The next iteration of the anime tracking series will improve upon some of the shortcomings in this project. Look forward to the Animatrix. Coming soon!**
