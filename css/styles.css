@@ -1,0 +1,306 @@
+/***** GLOBAL *****/
+html {
+	font-family: Arial;
+	font-size: 13px;
+	color: rgb(80,80,80);
+}
+
+/***** PRIMITIVES *****/
+p {
+	margin-bottom: 1.0em;
+}
+input[type=text] {
+	font-size: 13px;
+	font-family: Arial;
+	padding: 0.25em 0.5em;
+	border-radius: 100px;
+	border: solid 1px rgb(79,89,96);
+	background: rgb(20,27,33);
+	color: rgb(255,255,255);
+}
+input[type=text]::-webkit-input-placeholder {
+	font-style: italic;
+	color: rgb(100,100,100);
+}
+input[type=text].light {
+	background: rgb(255,255,255);
+	color: rgb(0,0,0);
+}
+input[type=text].light::-webkit-input-placeholder {
+	color: rgb(200,200,200);
+}
+
+/***** LAYOUT *****/
+#contentContainer {
+	height: 100%;
+	margin-left: 240px;
+}
+#leftpane, #rightpane {
+	width: 240px;
+	height: 100%;
+	background: green;
+	position: fixed;
+	top: 0px;
+}
+#leftpane {
+	left: 0px;
+	background: rgb(17,23,28);
+}
+#rightpane {
+	right: 0px;
+	background: rgb(236,237,239);
+}
+
+/***** LEFTPANE *****/
+#leftpane #search {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 1.0em;
+	width: 240px;
+	height: 5.0em;
+	background: rgb(204,77,77);
+	text-align: center;
+}
+#leftpane #searchBar {
+	background: rgb(255,255,255);
+	padding: 0em 0.5em;
+	border-radius: 1000px;
+	display: inline-block;
+}
+#leftpane #searchBar .icon {
+	width: 16px;
+	height: 16px;
+	margin-top: 5px;
+}
+#leftpane #searchBar #searchBox {
+	border: none;
+	background: none;
+	width: 150px;
+}
+.ui-autocomplete.ui-menu {
+	display: none !important;
+}
+#leftpane #filters {
+	padding: 1.0em;
+}
+#leftpane #filters .header {
+	color: rgb(60,76,85);
+	padding: 1.0em 1.0em 0.75em 1.0em;
+	background: none;
+	border-radius: 5px;
+}
+#leftpane #filters .filterSection {
+	padding: 0em 0em;
+}
+#leftpane #filters .option {
+	color: rgb(225,226,227);
+	padding: 0.75em 1.0em;
+	border-radius: 100px;
+	cursor: pointer;
+}
+#leftpane #filters .option.hovered { background: rgb(28,36,43); }
+#leftpane #filters .option.selected { background: rgb(51,64,75); }
+
+#leftpane #filters input[type=text] {
+	margin: 0em 1.0em;
+}
+
+/***** RIGHTPANE *****/
+#rightpane .metric {
+	cursor: pointer;
+	padding: 1.0em 1.0em;
+	overflow: hidden;
+}
+#rightpane .metric.hovered {
+	background: rgb(210,210,210);
+}
+#rightpane .metric .subtext {
+	float: left;
+}
+#rightpane .metric .subtext .line1 {
+	font-size: 0.9em;
+	color: rgb(121,134,151);
+	margin-bottom: 0.1em;
+}
+#rightpane .metric .subtext .line2 {
+	color: rgb(60,76,85);
+	font-weight: bold;
+	font-size: 1.1em;
+}
+#rightpane .metric .number {
+	border-radius: 100px;
+	background: rgb(116,192,200);
+	color: white;
+	font-size: 1.0em;
+	font-weight: bold;
+	padding: 0.5em;
+	float: right;
+	min-width: 16px;
+	text-align: center;
+	margin-top: 2px;
+}
+
+#rightpane #animesListed {
+	display: table-cell;
+	vertical-align: middle;
+	width: 240px;
+	height: 5.0em;
+	padding: 1.0em;
+	background: rgb(116,192,200);
+	text-align: center;
+	color: rgb(255,255,255);
+}
+#rightpane #animesListed .number { background: none; font-size: 2.0em; margin-bottom: 0.1em; }
+#rightpane #animesListed .subtext { font-size: 0.9em; font-weight: bold; }
+
+#rightpane #affiliatesContainer {
+	position: absolute;
+	bottom: 2px;
+	right: 0px;
+	width: 240px;
+	background: rgb(192,204,216);
+}
+#rightpane #affiliates {
+	margin: 1.0em;
+	text-align: right;
+}
+#rightpane #affiliates a {
+	display: block;
+	line-height: 1.5em;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+#rightpane #affiliates a:hover {
+	color: rgb(204,77,77);
+}
+
+/***** CONTENT *****/
+#content #banner {
+	padding: 15px 25px;
+	height: 50px;
+} 
+#content h1 {
+	position: relative;
+	font-weight: 400;
+	font-size: 1.75em;
+	color: rgb(50,50,50);
+	margin: 0.25em 0em;
+}
+#content #sortOptions {
+	position: relative;
+	color: rgb(200,200,200);
+	font-weight: bold;
+	padding-top: 0.75em;
+}
+#content .inlineBreak {
+	color: rgb(220,220,220);
+}
+#content .sortOption {
+	cursor: pointer;
+}
+#content .sortOption.selected {
+	color: rgb(115,192,201);
+}
+#content .sortOption.hovered {
+	color: rgb(115,190,190);
+}
+
+/***** GRID *****/
+#content #gridContainer {
+	/*overflow-y: auto;*/
+}
+#content #grid {
+	margin: 0em auto;
+}
+#content #grid .item {
+	cursor: pointer;
+	padding: 1.5em;
+	display: inline-block;
+	margin-bottom: 0.5em;
+	line-height: 1.3em;
+	border-radius: 5px;
+	position: relative;
+}
+#content #grid .item.hovered {
+	background: rgb(240,240,240);
+}
+#content #grid .item .coverContainer {
+	overflow: hidden;
+	width: 192px;
+	height: 284px;
+	margin-bottom: 0.75em;
+	position: relative;
+	border: solid 1px rgb(220,220,220);
+	border-radius: 5px;
+}
+#content #grid .item .coverContainer.completed 	{ border-top: solid 8px rgb(115,179,129); }
+#content #grid .item .coverContainer.watching 	{ border-top: solid 8px rgb(72,137,193); }
+#content #grid .item .coverContainer.queued 	{ border-top: solid 8px rgb(167,101,167); }
+#content #grid .item .coverContainer.abandoned 	{ border-top: solid 8px rgb(196,66,74); }
+
+#content #grid .item .cover {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#content #grid .item .loader {
+	position: absolute;
+}
+#content #grid .item .text {
+	width: 180px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	
+	font-size: 1.0em;
+	color: rgb(121,134,151);
+}
+#content #grid .item .title {
+	color: rgb(60,76,85);
+	font-weight: bold;
+	font-size: 1.1em;
+}
+.stars {
+	margin-top: 0em;
+}
+.stars .cropper {
+	display: inline-block;
+	overflow: hidden;
+}
+
+/***** TOOLTIPS *****/
+.ui-tooltip { padding: 0px; max-width: 500px; }
+.ui-tooltip.ui-widget-content { border: none; background: none; width: 600px; }
+.ui-tooltip-content {
+	background: rgba(0,0,0, 0.85);
+	border-radius: 5px;
+}
+.animeTooltipContainer { 
+	padding: 2.0em;
+	color: rgb(255,255,255);
+	line-height: 1.2em;
+}
+.animeTooltipHeader { }
+.animeTooltipTitle { font-weight: bold; }
+.animeTooltipLength { color: rgb(184,192,201); }
+.animeTooltipGenres { color: rgb(184,192,201); margin-bottom: 1.0em; }
+.animeTooltipDescription { margin-bottom: 1.5em; }
+.animeTooltipThemes .subject {}
+.animeTooltipThemes .list.empty { color: rgb(184,192,201); font-style: italic; }
+.animeTooltipThemes .list { color: rgb(90,147,154); }
+.animeTooltipBreak { border-bottom: solid 2px rgb(66,84,96); margin: 0.75em 0em; }
+.animeTooltipFooter {}
+.animeTooltipStatus {}
+.animeTooltipStatus .subject { color: rgb(255,255,255); }
+.animeTooltipStatus .text.completed { color: rgb(160,243,92); }
+.animeTooltipStatus .text.watching { color: rgb(73,177,255); }
+.animeTooltipStatus .text.queued { color: rgb(198,150,255); }
+.animeTooltipStatus .text.abandoned { color: rgb(255,119,132); }
+.animeTooltipStars {}
+
+/***** MACROS *****/
+.wrapper { overflow: hidden; }
+.left { float: left; }
+.right { float: right; }
+.block { display: block; }

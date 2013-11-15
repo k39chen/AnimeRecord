@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	
+		<title>Anime Record</title>
+		
+		<!-- Third-party libraries -->
+		<script type="text/javascript" src= "lib/jquery.js"></script>
+		<script type="text/javascript" src= "lib/jquery.ui.js"></script>
+		<script type="text/javascript" src= "lib/sortable.js"></script>
+		<script type="text/javascript" src= "lib/starGroup.js"></script>
+		<script type="text/javascript" src= "lib/FileSaver.js"></script>
+		<script type="text/javascript" src= "lib/BlobBuilder.js"></script>
+	
+		<!-- Functional scripts-->
+		<script type="text/javascript" src="js/constants.js"></script>
+		<script type="text/javascript" src="js/classes.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	
+		<!-- Anime data source file -->
+		<script type="text/javascript" src="data/animes.js"></script>
+		
+		<!-- Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.ui.css" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		
+	</head>
+	
+	<body>
+	
+		<div id="container" class="wrapper">
+			<div id="leftpane">
+				<div id="search">
+					<div id="searchBar" class="wrapper">
+						<img class="icon left" src="assets/search.png" />
+						<input id="searchBox" type="text" class="light left" placeholder="Search Records" />
+					</div>
+				</div>
+				<div id="filters">
+					<div class="header">Status</div>
+					<div id="status" class="filterSection">
+						<div class="option" value="default">Any Status</div>
+						<div class="option" value="completed">Completed</div>
+						<div class="option" value="watching">Watching</div>
+						<div class="option" value="queued">Queued</div>
+						<div class="option" value="abandoned">Abandoned</div>
+					</div>
+					<div class="header">Production Status</div>
+					<div id="productionStatus" class="filterSection">
+						<div class="option" value="default">Any Production Status</div>
+						<div class="option" value="ongoing">Ongoing</div>
+						<div class="option" value="concluded">Concluded</div>
+					</div>
+					<div class="header">Series Length</div>
+					<div id="seriesLength" class="filterSection">
+						<div class="option" value="default">Any Length</div>
+						<div class="option" value="L_1_13">1-13 Episodes</div>
+						<div class="option" value="L_14_26">14-26 Episodes</div>
+						<div class="option" value="L_27_54">27-54 Episodes</div>
+						<div class="option" value="L_55">+55 Episodes</div>
+					</div>
+					<!--
+					<div class="header">Genres / Themes</div>
+					<input id="genres" type="text" placeholder="Enter genre" />
+					-->
+				</div>
+			</div>
+			
+			<div id="contentContainer" class="wrapper">
+				<div id="content">
+					<div id="banner" class="wrapper">
+						<h1 id="title" class="left">Anime Record</h1>
+						<div id="sortOptions" class="right">
+							<span class="sortOption" value="alphabetical">Alphabetical</span>
+							<span class="inlineBreak">|</span>
+							<span class="sortOption" value="stars">Stars</span>
+							<span class="inlineBreak">|</span>
+							<span class="sortOption" value="length">Length</span>
+							<span class="inlineBreak">|</span>
+							<span class="sortOption" value="status">Status</span>
+						</div>
+					</div>
+					<div id="gridContainer">
+						<div id="grid"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="rightpane">
+				<div id="animesListed">
+					<div class="number"></div>
+					<div class="subtext">ANIMES LISTED</div>
+				</div>
+				<div id="metrics">
+					<div id="totalOngoing" class="metric">
+						<div class="subtext">
+							<div class="line1">Number of Animes</div>
+							<div class="line2">Ongoing</div>
+						</div>
+						<span class="number"></span>
+					</div>
+					<div id="totalCompleted" class="metric">
+						<div class="subtext">
+							<div class="line1">Number of Animes</div>
+							<div class="line2">Completed</div>
+						</div>
+						<span class="number"></span>
+					</div>
+					<div id="totalWatching" class="metric">
+						<div class="subtext">
+							<div class="line1">Number of Animes</div>
+							<div class="line2">Watching</div>
+						</div>
+						<span class="number"></span>
+					</div>
+					<div id="totalQueued" class="metric">
+						<div class="subtext">
+							<div class="line1">Number of Animes</div>
+							<div class="line2">Queued</div>
+						</div>
+						<span class="number"></span>
+					</div>
+					<div id="totalAbandoned" class="metric">
+						<div class="subtext">
+							<div class="line1">Number of Animes</div>
+							<div class="line2">Abandoned</div>
+						</div>
+						<span class="number"></span>
+					</div>
+					<div id="episodesWatched" class="metric">
+						<div class="subtext">
+							<div class="line1">Total Number of</div>
+							<div class="line2">Episodes Watched</div>
+						</div>
+						<span class="number"></span>
+					</div>
+					<div id="averageStars" class="metric">
+						<div class="subtext">
+							<div class="line1">Average Number of</div>
+							<div class="line2">Stars per Anime</div>
+						</div>
+						<span class="number"></span>
+					</div>
+				</div>
+				<div id="affiliatesContainer">
+					<div id="affiliates">
+						<a target="_blank" href="http://www.animenewsnetwork.com/encyclopedia/">AnimeNewsNetwork</a>
+						<a target="_blank" href="http://www.crunchyroll.com/">CrunchyRoll</a>
+						<a target="_blank" href="http://www.animeseason.com/">AnimeSeason</a>
+						<a target="_blank" href="http://www.rippersanime.info/">Rippers Anime</a>
+						<a target="_blank" href="http://anidb.net/">AniDB.net</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
