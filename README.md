@@ -1,7 +1,7 @@
 AnimeRecord
 ===========
 
-A central hub for tracking animes in various states of completion. Designed for inciting collaborative discussion on trending anime preferences for any given anime enthusiast. [Try it now](http://htmlpreview.github.io/?https://github.com/k39chen/D3PX/blob/master/index.html)!
+A central hub for tracking animes in various states of completion. Designed for inciting collaborative discussion on trending anime preferences for any given anime enthusiast. [Try it now](http://htmlpreview.github.io/?https://github.com/k39chen/AnimeRecord/blob/master/index.html)!
 
 ![alt='promo.jpg'](promo.jpg)
 
